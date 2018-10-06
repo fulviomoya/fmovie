@@ -13,7 +13,7 @@
 		2023451421688681006C11A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023451321688681006C11A1 /* Constants.swift */; };
 		20234516216888B9006C11A1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234515216888B9006C11A1 /* ServiceManager.swift */; };
 		20C6BA3121686D5B0023C66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3021686D5B0023C66E /* AppDelegate.swift */; };
-		20C6BA3321686D5B0023C66E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3221686D5B0023C66E /* ViewController.swift */; };
+		20C6BA3321686D5B0023C66E /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3221686D5B0023C66E /* MovieListViewController.swift */; };
 		20C6BA3621686D5B0023C66E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3421686D5B0023C66E /* Main.storyboard */; };
 		20C6BA3821686D5F0023C66E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3721686D5F0023C66E /* Assets.xcassets */; };
 		20C6BA3B21686D5F0023C66E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3921686D5F0023C66E /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 		20234515216888B9006C11A1 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		20C6BA2D21686D5B0023C66E /* fmovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fmovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C6BA3021686D5B0023C66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20C6BA3221686D5B0023C66E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20C6BA3221686D5B0023C66E /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		20C6BA3521686D5B0023C66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20C6BA3721686D5F0023C66E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20C6BA3A21686D5F0023C66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +76,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		202345172169000B006C11A1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2023451821690021006C11A1 /* MovieList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2023451821690021006C11A1 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				20C6BA3221686D5B0023C66E /* MovieListViewController.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
 		20C6BA2421686D5B0023C66E = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +113,11 @@
 		20C6BA2F21686D5B0023C66E /* fmovie */ = {
 			isa = PBXGroup;
 			children = (
+				20C6BA3021686D5B0023C66E /* AppDelegate.swift */,
 				2023451221688667006C11A1 /* Utilities */,
 				2023450A21687B61006C11A1 /* Network */,
 				20234507216875F8006C11A1 /* Models */,
-				20C6BA3021686D5B0023C66E /* AppDelegate.swift */,
-				20C6BA3221686D5B0023C66E /* ViewController.swift */,
+				202345172169000B006C11A1 /* Scenes */,
 				20C6BA3421686D5B0023C66E /* Main.storyboard */,
 				20C6BA3721686D5F0023C66E /* Assets.xcassets */,
 				20C6BA3921686D5F0023C66E /* LaunchScreen.storyboard */,
@@ -251,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C6BA3321686D5B0023C66E /* ViewController.swift in Sources */,
+				20C6BA3321686D5B0023C66E /* MovieListViewController.swift in Sources */,
 				20C6BA3121686D5B0023C66E /* AppDelegate.swift in Sources */,
 				20234511216885D9006C11A1 /* Service.swift in Sources */,
 				2023450F21688152006C11A1 /* MovieResult.swift in Sources */,

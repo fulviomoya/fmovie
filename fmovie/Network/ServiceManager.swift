@@ -8,20 +8,22 @@
 
 import Foundation
 import Moya
+import RxSwift
 
-protocol Network {
-    associatedtype T: TargetType
-    var provider: MoyaProvider<T> { get }
-    func getMovieList(identifier: Int, completion: @escaping ([Movie]) -> ())
+typealias completionPopularList = ([Movie]) -> ()
+
+protocol Networkable {
+    var provider: MoyaProvider<ServiceAPI> { get }
+    func getPopularMovies(completion: @escaping completionPopularList)
 }
 
-struct ServiceManager: Network {
-    static let APIKey: String = ""
+struct ServiceManager: Networkable {
+    static let APIKey: String = "5eaeace73d141434b339e94b554e632b"
     
-    var provider = MoyaProvider<ServiceAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    var provider = MoyaProvider<ServiceAPI>(/*plugins: [NetworkLoggerPlugin(verbose: true)]*/)
     
-    func getMovieList(identifier: Int, completion: @escaping ([Movie]) -> ()) {
-        provider.request(.getMovies(id: identifier)) { event in
+    func getPopularMovies(completion: @escaping completionPopularList){
+        provider.request(.getPopularMovie()) { event in
             switch event {
             case .success(let response):
                 do {

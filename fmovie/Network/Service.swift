@@ -11,6 +11,7 @@ import Moya
 
 enum ServiceAPI {
     case getMovies(id: Int)
+    case getPopularMovie()
 }
 
 extension ServiceAPI: TargetType {
@@ -25,7 +26,9 @@ extension ServiceAPI: TargetType {
     var path: String {
         switch self {
         case .getMovies(let id):
-            return "/\(id)/recommendations"
+            return "\(id)"
+        case .getPopularMovie():
+            return "movie/popular"
         }
     }
     
@@ -41,6 +44,11 @@ extension ServiceAPI: TargetType {
         switch self {
         case .getMovies:
             return .requestParameters(parameters: ["api_key":  ServiceManager.APIKey],
+                                      encoding: URLEncoding.queryString)
+            
+        case .getPopularMovie:
+            return .requestParameters(parameters: ["api_key":  ServiceManager.APIKey,
+                                                   "language": "en-US"],
                                       encoding: URLEncoding.queryString)
         }
     }

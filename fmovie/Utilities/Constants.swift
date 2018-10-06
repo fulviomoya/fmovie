@@ -9,8 +9,7 @@
 import Foundation
 
 enum Constants: String {
-    case API_ENDPOINT = "https://api.themoviedb.org/3/movie/"
-    case API_KEY = "0"
+    case API_ENDPOINT = "https://api.themoviedb.org/3/"
 }
 
 enum ErrorMessage: String {

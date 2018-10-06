@@ -11,7 +11,7 @@ import Foundation
 struct Movie: Decodable {
      let uid: Int
      let title: String
-     let rating: String
+     let rating: Float
      let sinopsis: String
      let posterPath: String
      let publicationDate: String
@@ -19,7 +19,7 @@ struct Movie: Decodable {
     private enum CodingKeys: String, CodingKey {
         case uid = "id"
         case title
-        case rating = "vote_avaerage"
+        case rating = "vote_average"
         case sinopsis = "overview"
         case posterPath = "poster_path"
         case publicationDate = "release_date"
@@ -30,7 +30,7 @@ struct Movie: Decodable {
         
         uid = try container.decode(Int.self, forKey: .uid)
         title = try container.decode(String.self, forKey: .title)
-        rating = try container.decode(String.self, forKey: .rating)
+        rating = try container.decode(Float.self, forKey: .rating)
         sinopsis = try container.decode(String.self, forKey: .sinopsis)
         posterPath = try container.decode(String.self, forKey: .posterPath)
         publicationDate = try container.decode(String.self, forKey: .publicationDate)
