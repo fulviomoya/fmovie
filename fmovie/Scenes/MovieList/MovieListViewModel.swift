@@ -7,41 +7,52 @@
 //
 
 import Foundation
+import UIKit
 
 class MovieListViewModel {
     private let repository: Repository<MovieDataModel>
-    private let navigator: MovieNavigator
+    private let viewController: MovieListViewController?
     private let service: ServiceManager
     
-    init(service: ServiceManager, repository: Repository<MovieDataModel>, navigator: MovieNavigator) {
-        self.repository = repository
-        self.navigator = navigator
-        self.service = service
-    }
-    
-    func fetchMovieList() -> [MovieItemViewModel] {
-        var itemViewModel:[MovieItemViewModel] = []
-        
-        for item in repository.queryAll() {
-            itemViewModel.append(MovieItemViewModel(with: item))
+    var movies: [MovieItemViewModel]? {
+        didSet {
+            self.viewController?.updateUI(with: self.movies)
         }
-        
-        return itemViewModel
     }
     
- /*   func fetchFromAPI(completion: completionPopularList) -> [Movie] {
-        service.getPopularMovies { list in
-            for movie in list {
-                self.repository.save(entity: movie.asDataModel())
+    init(viewController: MovieListViewController) {
+        self.viewController = viewController
+        self.repository = Application.shared.serviceLocator.getRepository()
+        self.service = Application.shared.serviceManager
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh(notification: )),
+                                               name: .updateMovies, object: nil)
+        fetchMovieList()
+    }
+    
+    @objc func fetchMovieList() {
+        if repository.queryAll().count == 0 {
+            service.getPopularMovies { list in
+                for movie in list {
+                    self.repository.save(entity: movie.asDataModel())
+                }
+                //Notify any posible observers
+                NotificationCenter.default.post(name: .updateMovies, object: nil)
             }
         }
-    }*/
-  
-    private func transform(movies: [MovieDataModel]) -> [MovieItemViewModel] {
-        var items: [MovieItemViewModel] = []
-        for movie in movies {
-            items.append(MovieItemViewModel(with: movie))
-        }
-        return items
+            var itemViewModel:[MovieItemViewModel] = [] //FIXME
+            for item in repository.queryAll() {
+                itemViewModel.append(MovieItemViewModel(with: item))
+            }
+            
+            self.movies = itemViewModel
+        
+    }
+    
+    @objc func refresh(notification: NSNotification){
+        fetchMovieList()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }

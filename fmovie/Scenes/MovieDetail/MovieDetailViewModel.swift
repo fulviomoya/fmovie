@@ -10,10 +10,8 @@ import Foundation
 
 class MovieDetailViewModel {
     private let movie: MovieDataModel
-    private let navigator: MovieDetailNavigator
-    
-    init(movie: MovieDataModel, navigator: MovieDetailNavigator) {
+   
+    init(movie: MovieDataModel) {
         self.movie = movie
-        self.navigator = navigator
     }
 }

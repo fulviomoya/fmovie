@@ -11,26 +11,55 @@ import UIKit
 class MovieListViewController: UIViewController {
     @IBOutlet weak var movieListCollectionView: UICollectionView!
 
-    var viewModel: MovieListViewModel!
-    
-    required convenience init(viewModel: MovieListViewModel) {
-        self.init(nibName: nil, bundle: nil)
-        self.viewModel = viewModel
-    }
-    
+    private var viewModel: MovieListViewModel!
+    var movieCollection: [MovieItemViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
-        //viewModel
+        viewModel = MovieListViewModel(viewController: self)
+        movieListCollectionView.dataSource = self
+        movieListCollectionView.delegate = self
         
-      /*  viewModel = MovieListViewModel(repository: T##Repository<MovieDataModel>, navigator: <#T##MovieNavigator#>)
-        provider.getPopularMovies(completion: { movies in
-            for movie in movies {
-                print("movies:: \(movie.title)")
-            }
-        })*/
-        //viewModel = MovieListViewModel()
+        collectionViewConfiguration()
+    }
+    
+    func updateUI(with movies: [MovieItemViewModel]?) {
+        guard let movies = movies else {  return  }
+
+        movieCollection = movies
+        movieListCollectionView.reloadData()
+    }
+    
+    //Privates functions
+    private func collectionViewConfiguration() {
+        let flow = movieListCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let itemSpacing: CGFloat = 1
+        let itemsInOneLine: CGFloat = 2
+        flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let width = UIScreen.main.bounds.size.width - itemSpacing * CGFloat(itemsInOneLine - 1)
+        flow.itemSize = CGSize(width: floor(width/itemsInOneLine), height: width*1.5/itemsInOneLine)
+        flow.minimumInteritemSpacing = 1
+        flow.minimumLineSpacing = 1
+    } 
+}
+
+extension MovieListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movieCollection.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.MOVIE_REUSABLE, for: indexPath) as! MovieCollectionViewCell
+        cell.bind(movieCollection[indexPath.row])
+        
+        return cell
+    }
+}
+
+extension MovieListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Selecting:: \(indexPath.row)")
     }
 }

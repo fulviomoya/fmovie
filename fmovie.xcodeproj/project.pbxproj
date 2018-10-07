@@ -18,12 +18,10 @@
 		2023452221692809006C11A1 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023452121692809006C11A1 /* Converter.swift */; };
 		20234526216A0151006C11A1 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234525216A0150006C11A1 /* MovieCollectionViewCell.swift */; };
 		20234528216A0BFD006C11A1 /* MovieItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234527216A0BFD006C11A1 /* MovieItemViewModel.swift */; };
-		2023452A216A0D26006C11A1 /* MovieNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234529216A0D26006C11A1 /* MovieNavigator.swift */; };
 		2023452C216A161A006C11A1 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023452B216A161A006C11A1 /* ServiceLocator.swift */; };
 		2023452F216A19CD006C11A1 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023452E216A19CD006C11A1 /* MovieDetailViewController.swift */; };
 		20234531216A1A56006C11A1 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234530216A1A56006C11A1 /* MovieDetailViewModel.swift */; };
 		20234537216A42FA006C11A1 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234536216A42FA006C11A1 /* Application.swift */; };
-		20234539216A46C8006C11A1 /* MovieDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234538216A46C8006C11A1 /* MovieDetailNavigator.swift */; };
 		20C6BA3121686D5B0023C66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3021686D5B0023C66E /* AppDelegate.swift */; };
 		20C6BA3321686D5B0023C66E /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3221686D5B0023C66E /* MovieListViewController.swift */; };
 		20C6BA3621686D5B0023C66E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3421686D5B0023C66E /* Main.storyboard */; };
@@ -45,12 +43,10 @@
 		2023452121692809006C11A1 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		20234525216A0150006C11A1 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		20234527216A0BFD006C11A1 /* MovieItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemViewModel.swift; sourceTree = "<group>"; };
-		20234529216A0D26006C11A1 /* MovieNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNavigator.swift; sourceTree = "<group>"; };
 		2023452B216A161A006C11A1 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		2023452E216A19CD006C11A1 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		20234530216A1A56006C11A1 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		20234536216A42FA006C11A1 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		20234538216A46C8006C11A1 /* MovieDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailNavigator.swift; sourceTree = "<group>"; };
 		20C6BA2D21686D5B0023C66E /* fmovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fmovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C6BA3021686D5B0023C66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C6BA3221686D5B0023C66E /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +102,6 @@
 		202345172169000B006C11A1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				20234536216A42FA006C11A1 /* Application.swift */,
 				2023452D216A19A6006C11A1 /* MovieDetail */,
 				2023451821690021006C11A1 /* MovieList */,
 			);
@@ -120,7 +115,6 @@
 				2023451B21692062006C11A1 /* MovieListViewModel.swift */,
 				20234525216A0150006C11A1 /* MovieCollectionViewCell.swift */,
 				20234527216A0BFD006C11A1 /* MovieItemViewModel.swift */,
-				20234529216A0D26006C11A1 /* MovieNavigator.swift */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -148,7 +142,6 @@
 			children = (
 				2023452E216A19CD006C11A1 /* MovieDetailViewController.swift */,
 				20234530216A1A56006C11A1 /* MovieDetailViewModel.swift */,
-				20234538216A46C8006C11A1 /* MovieDetailNavigator.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -174,6 +167,7 @@
 		20C6BA2F21686D5B0023C66E /* fmovie */ = {
 			isa = PBXGroup;
 			children = (
+				20234536216A42FA006C11A1 /* Application.swift */,
 				20C6BA3021686D5B0023C66E /* AppDelegate.swift */,
 				2023451921691E50006C11A1 /* Data */,
 				2023451221688667006C11A1 /* Utility */,
@@ -340,12 +334,10 @@
 				20234537216A42FA006C11A1 /* Application.swift in Sources */,
 				2023452221692809006C11A1 /* Converter.swift in Sources */,
 				2023452C216A161A006C11A1 /* ServiceLocator.swift in Sources */,
-				2023452A216A0D26006C11A1 /* MovieNavigator.swift in Sources */,
 				2023452F216A19CD006C11A1 /* MovieDetailViewController.swift in Sources */,
 				20C6BA3121686D5B0023C66E /* AppDelegate.swift in Sources */,
 				20234531216A1A56006C11A1 /* MovieDetailViewModel.swift in Sources */,
 				20234520216924FD006C11A1 /* MovieDataModel.swift in Sources */,
-				20234539216A46C8006C11A1 /* MovieDetailNavigator.swift in Sources */,
 				20234511216885D9006C11A1 /* Service.swift in Sources */,
 				2023451C21692062006C11A1 /* MovieListViewModel.swift in Sources */,
 				2023450F21688152006C11A1 /* MovieResult.swift in Sources */,

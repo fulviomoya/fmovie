@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import Firebase
 
 enum Constants: String {
     case API_ENDPOINT = "https://api.themoviedb.org/3/"
     case IMAGE_ENPOINT = "http://image.tmdb.org/t/p/w400"
+    
+    static let APIKey: String = RemoteConfig.remoteConfig().configValue(forKey: "tmdb_api_key").stringValue ?? "unknown"
 }
 
 enum ErrorMessage: String {
@@ -20,4 +23,9 @@ enum ErrorMessage: String {
 
 enum Identifiers {
     static let MOVIE_REUSABLE = "movie_reusable"
+    static let LIST_TO_DETAIL_SEGUE = "listToDetailSegue"
+}
+
+extension Notification.Name {
+    static let updateMovies = Notification.Name("update_movies")
 }

@@ -43,11 +43,11 @@ extension ServiceAPI: TargetType {
     var task: Task {
         switch self {
         case .getMovies:
-            return .requestParameters(parameters: ["api_key":  ServiceManager.APIKey],
+            return .requestParameters(parameters: ["api_key":  Constants.APIKey],
                                       encoding: URLEncoding.queryString)
             
         case .getPopularMovie:
-            return .requestParameters(parameters: ["api_key":  ServiceManager.APIKey,
+            return .requestParameters(parameters: ["api_key":  Constants.APIKey,
                                                    "language": "en-US"],
                                       encoding: URLEncoding.queryString)
         }

@@ -19,23 +19,30 @@ protocol Networkable {
 }
 
 struct ServiceManager: Networkable {
-    static let APIKey: String = RemoteConfig.remoteConfig().configValue(forKey: "tmdb_api_key").stringValue ?? "undefined"
-    
-    var provider = MoyaProvider<ServiceAPI>() /*plugins: [NetworkLoggerPlugin(verbose: true)]*/
+     var provider = MoyaProvider<ServiceAPI>() /*plugins: [NetworkLoggerPlugin(verbose: true)]*/
     
     func getPopularMovies(completion: @escaping completionPopularList) {
-        provider.request(.getPopularMovie()) { event in
-            switch event {
-            case .success(let response):
-                do {
-                    let result = try JSONDecoder().decode(MovieResult.self, from: response.data)
-                    completion(result.movies)
-                } catch let err {
-                    print(err)
-                }
-            case .failure(let error):
-                print(error)
+        RemoteConfig.remoteConfig().fetch() { status, error in
+            if let error = error {
+                print("Uh-oh. Got an error fetching remote values \(error)")
+                return
             }
-        } 
+            RemoteConfig.remoteConfig().activateFetched()
+            print("Retrieved values from the cloud!")
+            
+            self.provider.request(.getPopularMovie()) { event in
+                switch event {
+                case .success(let response):
+                    do {
+                        let result = try JSONDecoder().decode(MovieResult.self, from: response.data)
+                        completion(result.movies)
+                    } catch let err {
+                        print(err)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }
