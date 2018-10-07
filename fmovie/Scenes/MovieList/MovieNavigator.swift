@@ -18,8 +18,12 @@ class MovieNavigator: MovieNavigatorProtocol {
     private let navigationController: UINavigationController
     private let storyBoard: UIStoryboard
     private let serviceLocator: ServiceLocator
+    private let serviceManager: ServiceManager
     
-    init(serviceLocator: ServiceLocator, storyBoard: UIStoryboard, navigationController: UINavigationController) {
+    init(serviceManager: ServiceManager, serviceLocator: ServiceLocator,
+         storyBoard: UIStoryboard, navigationController: UINavigationController) {
+        
+        self.serviceManager = serviceManager
         self.serviceLocator = serviceLocator
         self.navigationController = navigationController
         self.storyBoard = storyBoard
@@ -32,7 +36,7 @@ class MovieNavigator: MovieNavigatorProtocol {
             fatalError(ErrorMessage.INVALID_VIEWCONTROLLER.rawValue)
         }
         
-        vc.viewModel = MovieListViewModel(repository: serviceLocator.getRepository(), navigator: self)
+        vc.viewModel = MovieListViewModel(service: serviceManager, repository: serviceLocator.getRepository(), navigator: self)
         navigationController.pushViewController(vc, animated: true)
     }
     

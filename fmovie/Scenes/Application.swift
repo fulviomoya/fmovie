@@ -13,18 +13,19 @@ final class Application {
     static let shared = Application()
     
     private let serviceLocator: ServiceLocator
-    private let network: ServiceManager
+    private let serviceManager: ServiceManager
     
     private init() {
-        self.network = ServiceManager()
+        self.serviceManager = ServiceManager()
         self.serviceLocator = ServiceLocator()
+        
     }
     
     func baseInitialConfiguration(in window: UIWindow) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = UINavigationController()
-        let navigator = MovieNavigator(serviceLocator: serviceLocator, storyBoard: storyBoard, navigationController: navigationController)
-        window.rootViewController = MovieListViewController()
+        let navigator = MovieNavigator(serviceManager: serviceManager, serviceLocator: serviceLocator, storyBoard: storyBoard, navigationController: navigationController)
+        window.rootViewController = storyBoard.instantiateInitialViewController()
         
         navigator.displayList()
     }

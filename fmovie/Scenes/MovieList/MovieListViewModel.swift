@@ -7,20 +7,35 @@
 //
 
 import Foundation
-import RxSwift
 
 class MovieListViewModel {
     private let repository: Repository<MovieDataModel>
     private let navigator: MovieNavigator
+    private let service: ServiceManager
     
-    init(repository: Repository<MovieDataModel>, navigator: MovieNavigator) {
+    init(service: ServiceManager, repository: Repository<MovieDataModel>, navigator: MovieNavigator) {
         self.repository = repository
         self.navigator = navigator
+        self.service = service
     }
     
-    func fetchMovieList() -> Observable<[MovieItemViewModel]> {
-        return repository.queryAll().map { self.transform(movies: $0) }
+    func fetchMovieList() -> [MovieItemViewModel] {
+        var itemViewModel:[MovieItemViewModel] = []
+        
+        for item in repository.queryAll() {
+            itemViewModel.append(MovieItemViewModel(with: item))
+        }
+        
+        return itemViewModel
     }
+    
+ /*   func fetchFromAPI(completion: completionPopularList) -> [Movie] {
+        service.getPopularMovies { list in
+            for movie in list {
+                self.repository.save(entity: movie.asDataModel())
+            }
+        }
+    }*/
   
     private func transform(movies: [MovieDataModel]) -> [MovieItemViewModel] {
         var items: [MovieItemViewModel] = []
@@ -29,12 +44,4 @@ class MovieListViewModel {
         }
         return items
     }
-    
-    /*func fetchMovieList() {
-        networkProvider.getPopularMovies(completion: { list in
-            for movie in list {
-                print("value:: \(movie.title)")
-            }
-        })
-    }*/
 }

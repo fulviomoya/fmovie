@@ -17,6 +17,6 @@ public final class ServiceLocator {
     }
     
     func getRepository() -> Repository<MovieDataModel> {
-        return Repository<MovieDataModel>(configuration: configuration)
+        return Repository(configuration: configuration)
     }
 }

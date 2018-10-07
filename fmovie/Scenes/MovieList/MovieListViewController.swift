@@ -18,15 +18,14 @@ class MovieListViewController: UIViewController {
         self.viewModel = viewModel
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-            .map( {_ in })
+      
+        //viewModel
         
-        viewModel.fetchMovieList().do(){}
-        
-      /*  viewModel = MovieListViewModel(repository: <#T##Repository<MovieDataModel>#>, navigator: <#T##MovieNavigator#>)
+      /*  viewModel = MovieListViewModel(repository: T##Repository<MovieDataModel>, navigator: <#T##MovieNavigator#>)
         provider.getPopularMovies(completion: { movies in
             for movie in movies {
                 print("movies:: \(movie.title)")

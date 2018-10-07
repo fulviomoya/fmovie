@@ -16,7 +16,6 @@
 		2023451E216921CC006C11A1 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023451D216921CC006C11A1 /* Repository.swift */; };
 		20234520216924FD006C11A1 /* MovieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023451F216924FD006C11A1 /* MovieDataModel.swift */; };
 		2023452221692809006C11A1 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023452121692809006C11A1 /* Converter.swift */; };
-		2023452421692C79006C11A1 /* ThreadScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023452321692C79006C11A1 /* ThreadScheduler.swift */; };
 		20234526216A0151006C11A1 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234525216A0150006C11A1 /* MovieCollectionViewCell.swift */; };
 		20234528216A0BFD006C11A1 /* MovieItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234527216A0BFD006C11A1 /* MovieItemViewModel.swift */; };
 		2023452A216A0D26006C11A1 /* MovieNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234529216A0D26006C11A1 /* MovieNavigator.swift */; };
@@ -25,13 +24,13 @@
 		20234531216A1A56006C11A1 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234530216A1A56006C11A1 /* MovieDetailViewModel.swift */; };
 		20234537216A42FA006C11A1 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234536216A42FA006C11A1 /* Application.swift */; };
 		20234539216A46C8006C11A1 /* MovieDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20234538216A46C8006C11A1 /* MovieDetailNavigator.swift */; };
-		2023453F216A4C95006C11A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2023453E216A4C95006C11A1 /* GoogleService-Info.plist */; };
 		20C6BA3121686D5B0023C66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3021686D5B0023C66E /* AppDelegate.swift */; };
 		20C6BA3321686D5B0023C66E /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C6BA3221686D5B0023C66E /* MovieListViewController.swift */; };
 		20C6BA3621686D5B0023C66E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3421686D5B0023C66E /* Main.storyboard */; };
 		20C6BA3821686D5F0023C66E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3721686D5F0023C66E /* Assets.xcassets */; };
 		20C6BA3B21686D5F0023C66E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C6BA3921686D5F0023C66E /* LaunchScreen.storyboard */; };
 		906EFD5E8B9544BFEB14D5CE /* Pods_fmovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A158DB43950C8B3987B2044F /* Pods_fmovie.framework */; };
+		FA2C86DF216A81E5005167C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA2C86DE216A81E4005167C7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 		2023451D216921CC006C11A1 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		2023451F216924FD006C11A1 /* MovieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataModel.swift; sourceTree = "<group>"; };
 		2023452121692809006C11A1 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
-		2023452321692C79006C11A1 /* ThreadScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadScheduler.swift; sourceTree = "<group>"; };
 		20234525216A0150006C11A1 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		20234527216A0BFD006C11A1 /* MovieItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemViewModel.swift; sourceTree = "<group>"; };
 		20234529216A0D26006C11A1 /* MovieNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNavigator.swift; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 		20234530216A1A56006C11A1 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		20234536216A42FA006C11A1 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		20234538216A46C8006C11A1 /* MovieDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailNavigator.swift; sourceTree = "<group>"; };
-		2023453E216A4C95006C11A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20C6BA2D21686D5B0023C66E /* fmovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fmovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C6BA3021686D5B0023C66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20C6BA3221686D5B0023C66E /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +61,7 @@
 		70260011D70F08985A63EA32 /* Pods-fmovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fmovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-fmovie/Pods-fmovie.release.xcconfig"; sourceTree = "<group>"; };
 		A158DB43950C8B3987B2044F /* Pods_fmovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fmovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4AF757A06FBDB0C32D52F1 /* Pods-fmovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fmovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fmovie/Pods-fmovie.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2C86DE216A81E4005167C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				2023451321688681006C11A1 /* Constants.swift */,
-				2023452321692C79006C11A1 /* ThreadScheduler.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -128,13 +125,13 @@
 			path = MovieList;
 			sourceTree = "<group>";
 		};
-		2023451921691E50006C11A1 /* DataModel */ = {
+		2023451921691E50006C11A1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				2023451A21691E65006C11A1 /* Model */,
 				2023451D216921CC006C11A1 /* Repository.swift */,
 			);
-			path = DataModel;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		2023451A21691E65006C11A1 /* Model */ = {
@@ -178,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				20C6BA3021686D5B0023C66E /* AppDelegate.swift */,
-				2023451921691E50006C11A1 /* DataModel */,
+				2023451921691E50006C11A1 /* Data */,
 				2023451221688667006C11A1 /* Utility */,
 				2023450A21687B61006C11A1 /* Network */,
 				20234507216875F8006C11A1 /* Models */,
@@ -187,7 +184,7 @@
 				20C6BA3721686D5F0023C66E /* Assets.xcassets */,
 				20C6BA3921686D5F0023C66E /* LaunchScreen.storyboard */,
 				20C6BA3C21686D5F0023C66E /* Info.plist */,
-				2023453E216A4C95006C11A1 /* GoogleService-Info.plist */,
+				FA2C86DE216A81E4005167C7 /* GoogleService-Info.plist */,
 			);
 			path = fmovie;
 			sourceTree = "<group>";
@@ -270,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C6BA3B21686D5F0023C66E /* LaunchScreen.storyboard in Resources */,
-				2023453F216A4C95006C11A1 /* GoogleService-Info.plist in Resources */,
+				FA2C86DF216A81E5005167C7 /* GoogleService-Info.plist in Resources */,
 				20C6BA3821686D5F0023C66E /* Assets.xcassets in Resources */,
 				20C6BA3621686D5B0023C66E /* Main.storyboard in Resources */,
 			);
@@ -312,9 +309,6 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -327,9 +321,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +337,6 @@
 			files = (
 				20C6BA3321686D5B0023C66E /* MovieListViewController.swift in Sources */,
 				20234526216A0151006C11A1 /* MovieCollectionViewCell.swift in Sources */,
-				2023452421692C79006C11A1 /* ThreadScheduler.swift in Sources */,
 				20234537216A42FA006C11A1 /* Application.swift in Sources */,
 				2023452221692809006C11A1 /* Converter.swift in Sources */,
 				2023452C216A161A006C11A1 /* ServiceLocator.swift in Sources */,

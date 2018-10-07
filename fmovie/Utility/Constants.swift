@@ -18,7 +18,6 @@ enum ErrorMessage: String {
     case INVALID_VIEWCONTROLLER = "Can not get a ViewController of type."
 }
 
-
 enum Identifiers {
     static let MOVIE_REUSABLE = "movie_reusable"
 }
