@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let provider = ServiceManager()
-        let appStartVC = MovieListViewModel(networkProvider: provider)
     
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        firebaseRemoteConfig()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        Application.shared.baseInitialConfiguration(in: window)
+        
+        self.window = window
+
         return true
     }
 
@@ -40,5 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    fileprivate func firebaseRemoteConfig() {
+        FirebaseApp.configure()
+        RemoteConfig.remoteConfig().fetch() { status, error in
+            if let error = error {
+                print("Uh-oh. Got an error fetching remote values \(error)")
+                return
+            }
+            RemoteConfig.remoteConfig().activateFetched()
+            print("Retrieved values from the cloud!")
+        }
     }
 }

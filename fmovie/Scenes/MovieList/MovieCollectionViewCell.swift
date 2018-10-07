@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
@@ -17,7 +18,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     func bind(_ viewModel: MovieItemViewModel) {
         self.favoriteIndicatorImageView.isHidden = viewModel.favoriteIndicator
-       // self.posterImageView.image = UIImage(data: Data() viewModel.posterImage
+        self.posterImageView.af_setImage(withURL: URL(string: Constants.IMAGE_ENPOINT.rawValue + viewModel.posterImageURL)!)
         self.titleLabel.text = viewModel.title
         self.ratingLabel.text = viewModel.rating
     }

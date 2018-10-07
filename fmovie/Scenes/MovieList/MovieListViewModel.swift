@@ -19,7 +19,7 @@ class MovieListViewModel {
     }
     
     func fetchMovieList() -> Observable<[MovieItemViewModel]> {
-        return self.repository.queryAll().map { self.transform(movies: $0) }
+        return repository.queryAll().map { self.transform(movies: $0) }
     }
   
     private func transform(movies: [MovieDataModel]) -> [MovieItemViewModel] {

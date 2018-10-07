@@ -30,7 +30,7 @@ final class Repository<T>: RepositoryProtocol where T: MovieDataModel {
     }
     
     init(configuration: Realm.Configuration) {
-        let name = "br.instacarros.fmovie"
+        let name = "moya.fulvio.fmovie"
         self.configuration = configuration
         self.scheduler = ThreadScheduler(threadName: name)
     }

@@ -8,9 +8,10 @@
 
 import Foundation
 import Moya
-import RxSwift
+import Firebase
 
 typealias completionPopularList = ([Movie]) -> ()
+typealias completionImage = (Image) -> ()
 
 protocol Networkable {
     var provider: MoyaProvider<ServiceAPI> { get }
@@ -18,11 +19,11 @@ protocol Networkable {
 }
 
 struct ServiceManager: Networkable {
-    static let APIKey: String = "5eaeace73d141434b339e94b554e632b"
+    static let APIKey: String = RemoteConfig.remoteConfig().configValue(forKey: "tmdb_api_key").stringValue ?? "undefined"
     
-    var provider = MoyaProvider<ServiceAPI>(/*plugins: [NetworkLoggerPlugin(verbose: true)]*/)
+    var provider = MoyaProvider<ServiceAPI>() /*plugins: [NetworkLoggerPlugin(verbose: true)]*/
     
-    func getPopularMovies(completion: @escaping completionPopularList){
+    func getPopularMovies(completion: @escaping completionPopularList) {
         provider.request(.getPopularMovie()) { event in
             switch event {
             case .success(let response):

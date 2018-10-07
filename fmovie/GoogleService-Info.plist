@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>599828802761-rfggcgl2aa619s4hof4l8o4uj5vghp0j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.599828802761-rfggcgl2aa619s4hof4l8o4uj5vghp0j</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDqqLwi5NC9_ptbk1FVaj0zwFa9qSQpOMw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>599828802761</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>moya.fulvio.fmovie</string>
+	<key>PROJECT_ID</key>
+	<string>fmovie-b7857</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fmovie-b7857.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:599828802761:ios:9ac8c9ae6f3af500</string>
+	<key>DATABASE_URL</key>
+	<string>https://fmovie-b7857.firebaseio.com</string>
+</dict>
+</plist>

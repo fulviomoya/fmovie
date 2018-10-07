@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol MovieNavigatorProtocol {
+    func displayList()
     func goToDetail(_ movie: MovieDataModel)
 }
 
@@ -24,14 +25,26 @@ class MovieNavigator: MovieNavigatorProtocol {
         self.storyBoard = storyBoard
     }
     
-    func goToDetail(_ movie: MovieDataModel) {
-        let controlerIdentifier: String = MovieDetailViewController.self.description()
+    func displayList() {
+        let controllerIdentifier: String = MovieListViewController.self.description()
         
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: controlerIdentifier) as? MovieDetailViewController else {
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: controllerIdentifier) as? MovieListViewController else {
             fatalError(ErrorMessage.INVALID_VIEWCONTROLLER.rawValue)
         }
         
-        vc.viewModel = MovieDetailViewModel(repository: serviceLocator.getRepository(), navigator: self)
+        vc.viewModel = MovieListViewModel(repository: serviceLocator.getRepository(), navigator: self)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func goToDetail(_ movie: MovieDataModel) {
+        let controllerIdentifier: String = MovieDetailViewController.self.description()
+        let navigator = MovieDetailNavigator(serviceLocator: serviceLocator, storyBoard: storyBoard, navigationController: navigationController)
+       
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: controllerIdentifier) as? MovieDetailViewController else {
+            fatalError(ErrorMessage.INVALID_VIEWCONTROLLER.rawValue)
+        }
+        
+        vc.viewModel = MovieDetailViewModel(movie: movie, navigator: navigator)
         navigationController.pushViewController(vc, animated: true)
     }
 }

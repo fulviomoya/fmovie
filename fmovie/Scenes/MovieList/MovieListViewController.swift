@@ -9,19 +9,29 @@
 import UIKit
 
 class MovieListViewController: UIViewController {
-    var viewModel: MovieListViewModel!
-    let provider = ServiceManager()
-    
     @IBOutlet weak var movieListCollectionView: UICollectionView!
-   
+
+    var viewModel: MovieListViewModel!
+    
+    required convenience init(viewModel: MovieListViewModel) {
+        self.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = MovieListViewModel(repository: <#T##Repository<MovieDataModel>#>, navigator: <#T##MovieNavigator#>)
+        
+        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+            .map( {_ in })
+        
+        viewModel.fetchMovieList().do(){}
+        
+      /*  viewModel = MovieListViewModel(repository: <#T##Repository<MovieDataModel>#>, navigator: <#T##MovieNavigator#>)
         provider.getPopularMovies(completion: { movies in
             for movie in movies {
                 print("movies:: \(movie.title)")
             }
-        })
+        })*/
         //viewModel = MovieListViewModel()
     }
 }

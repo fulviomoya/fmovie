@@ -14,7 +14,7 @@
         <!--Movie List View Controller-->
         <scene sceneID="TmU-Lp-fNo">
             <objects>
-                <viewController id="iJ6-Xx-V7T" customClass="MovieListViewController" customModule="fmovie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fmovie.MovieListViewController" id="iJ6-Xx-V7T" customClass="MovieListViewController" customModule="fmovie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E9k-zR-GFt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +106,7 @@
         <!--View Controller-->
         <scene sceneID="CGc-9h-26I">
             <objects>
-                <viewController id="cs4-wr-ENc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fmovie.MovieDetailViewController" id="cs4-wr-ENc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gf-B6-zSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

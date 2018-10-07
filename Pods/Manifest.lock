@@ -80,6 +80,8 @@ PODS:
   - RealmSwift (3.11.0):
     - Realm (= 3.11.0)
   - Result (3.2.4)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
   - RxRealm (0.7.5):
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
@@ -94,6 +96,7 @@ DEPENDENCIES:
   - Moya/RxSwift (~> 11.0)
   - Realm (~> 3.10)
   - RealmSwift (~> 3.10)
+  - RxCocoa (~> 4.0)
   - RxRealm (~> 0.7.1)
   - RxSwift (~> 4.0)
 
@@ -115,6 +118,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Result
+    - RxCocoa
     - RxRealm
     - RxSwift
 
@@ -135,9 +139,10 @@ SPEC CHECKSUMS:
   Realm: 92f09a102692b96a9a10e9617f214f15c5ab85fc
   RealmSwift: 5f0481cd658bb751c509314b964a35eaa264d2cf
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: b1f1bb50974336cf76161e7a2562684d7a19fb2f
+PODFILE CHECKSUM: 901efb575fc4dc9311a771ca5b46d33b3fa4b224
 
 COCOAPODS: 1.5.3

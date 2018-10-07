@@ -9,11 +9,11 @@
 import Foundation
 
 class MovieDetailViewModel {
-    private let repository: Repository<MovieDataModel>
-    private let navigator: MovieNavigator
+    private let movie: MovieDataModel
+    private let navigator: MovieDetailNavigator
     
-    init(repository: Repository<MovieDataModel>, navigator: MovieNavigator) {
-        self.repository = repository
+    init(movie: MovieDataModel, navigator: MovieDetailNavigator) {
+        self.movie = movie
         self.navigator = navigator
     }
 }
