@@ -14,4 +14,10 @@ enum Constants: String {
 
 enum ErrorMessage: String {
     case NOT_FOUND = "Could not be resolve the URL EndPoint"
+    case INVALID_VIEWCONTROLLER = "Can not get a ViewController of type MovieDetailViewController"
+}
+
+
+enum Identifiers {
+    static let MOVIE_REUSABLE = "movie_reusable"
 }

@@ -15,12 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let provider = ServiceManager()
-        let appStartVC = MovieListViewController(networkProvider: provider)
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = appStartVC
-        self.window?.makeKeyAndVisible()
-        
+        let appStartVC = MovieListViewModel(networkProvider: provider)
+    
         return true
     }
 

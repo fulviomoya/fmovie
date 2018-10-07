@@ -17,6 +17,7 @@ final class MovieDataModel: Object {
     @objc dynamic var sinopsis: String = ""
     @objc dynamic var posterPath: String = ""
     @objc dynamic var publicationDate: String = ""
+    @objc dynamic var isFavorite: Bool = false
     
     override class func primaryKey() -> String? {
         return "id"

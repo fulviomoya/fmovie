@@ -14,4 +14,8 @@ target 'fmovie' do
   pod 'Moya'
   pod 'Moya/RxSwift', '~> 11.0'
   pod 'Realm', '~> 3.10'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/RemoteConfig'
+  
 end

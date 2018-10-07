@@ -9,24 +9,19 @@
 import UIKit
 
 class MovieListViewController: UIViewController {
-    var networkProvider: Networkable!
+    var viewModel: MovieListViewModel!
+    let provider = ServiceManager()
     
-    init(networkProvider: Networkable) {
-        super.init(nibName: nil, bundle: nil)
-        self.networkProvider = networkProvider
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
+    @IBOutlet weak var movieListCollectionView: UICollectionView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        networkProvider.getPopularMovies(completion: { list in
-            for movie in list {
-                print("value:: \(movie.title)")
+        viewModel = MovieListViewModel(repository: <#T##Repository<MovieDataModel>#>, navigator: <#T##MovieNavigator#>)
+        provider.getPopularMovies(completion: { movies in
+            for movie in movies {
+                print("movies:: \(movie.title)")
             }
         })
+        //viewModel = MovieListViewModel()
     }
 }
