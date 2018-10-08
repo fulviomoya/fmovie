@@ -9,6 +9,7 @@
 import Foundation
 
 final class MovieItemViewModel {
+    let id: Int
     var favoriteIndicator: Bool
     let posterImageURL: String
     let title: String
@@ -16,6 +17,7 @@ final class MovieItemViewModel {
     let sipnosis: String
     
     init(with movie: MovieDataModel) {
+        self.id = movie.id
         self.title = movie.title
         self.rating = String(movie.rating)
         self.posterImageURL = movie.posterPath

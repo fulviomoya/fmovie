@@ -35,6 +35,7 @@ class MovieListViewModel {
                 for movie in list {
                     self.repository.save(entity: movie.asDataModel())
                 }
+                
                 //Notify any posible observers
                 NotificationCenter.default.post(name: .updateMovies, object: nil)
             }

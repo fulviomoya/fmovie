@@ -43,7 +43,11 @@ class MovieListViewController: UIViewController {
         flow.itemSize = CGSize(width: floor(width/itemsInOneLine), height: width*1.5/itemsInOneLine)
         flow.minimumInteritemSpacing = 1
         flow.minimumLineSpacing = 1
-    } 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        movieListCollectionView.reloadData()
+    }
 }
 
 extension MovieListViewController: UICollectionViewDataSource {

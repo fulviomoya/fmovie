@@ -9,10 +9,15 @@
 import Foundation
 
 class MovieDetailViewModel {
-    private let movie: MovieItemViewModel
+    private let repository: Repository<MovieDataModel>
    
-    init(movie: MovieItemViewModel) {
-        self.movie = movie
+    init() {
+        self.repository =  Application.shared.serviceLocator.getRepository()
     }
     
+    func movieChangePreference(modelId: Int, isFavorite: Bool) {
+        if let dataModel: MovieDataModel = repository.findBy(id: modelId)  {
+            repository.update(object: dataModel, favorite: isFavorite)
+        }
+    } 
 }
