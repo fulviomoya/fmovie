@@ -111,7 +111,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ddM-Ci-Qr5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="myu-b9-rD4"/>
+                    <navigationItem key="navigationItem" id="myu-b9-rD4">
+                        <barButtonItem key="rightBarButtonItem" image="sort" id="l68-Xg-k8q"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="movieListCollectionView" destination="Daz-Fz-RRC" id="e5X-lC-Ly8"/>
                         <segue destination="cs4-wr-ENc" kind="show" identifier="listToDetailSegue" id="Z6e-j8-H1I"/>
@@ -311,6 +313,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="sort" width="24" height="24"/>
         <image name="star_icon" width="32" height="32"/>
         <namedColor name="primary_color">
             <color red="0.10980392156862745" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

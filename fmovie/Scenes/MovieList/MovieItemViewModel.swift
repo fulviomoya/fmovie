@@ -13,13 +13,13 @@ final class MovieItemViewModel {
     var favoriteIndicator: Bool
     let posterImageURL: String
     let title: String
-    let rating: String
+    let rating: Float
     let sipnosis: String
     
     init(with movie: MovieDataModel) {
         self.id = movie.id
         self.title = movie.title
-        self.rating = String(movie.rating)
+        self.rating = movie.rating
         self.posterImageURL = movie.posterPath
         self.favoriteIndicator = movie.isFavorite
         self.sipnosis = movie.sinopsis

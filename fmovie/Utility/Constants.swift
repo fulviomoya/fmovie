@@ -23,6 +23,7 @@ enum Identifiers {
 enum ErrorMessage: String {
     case NOT_FOUND = "Could not be resolve the URL EndPoint"
     case INVALID_VIEWCONTROLLER = "Can not get a ViewController of type."
+    case EMPTY_COLLECTION = "No elements to show"
 }
 
 enum FavoriteButtonState: String {

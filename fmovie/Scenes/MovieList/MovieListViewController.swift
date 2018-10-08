@@ -36,7 +36,7 @@ class MovieListViewController: UIViewController {
     
     internal func updateUI(with movies: [MovieItemViewModel]?) {
         guard let movies = movies else {  return  }
-        movieCollection = movies
+        movieCollection = movies.sorted(by: {$0.rating > $1.rating })
         movieListCollectionView.reloadData()
     }
 }

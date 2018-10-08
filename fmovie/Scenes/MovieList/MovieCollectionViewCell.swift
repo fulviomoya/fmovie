@@ -20,6 +20,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.favoriteIndicatorImageView.isHidden = !viewModel.favoriteIndicator
         self.posterImageView.af_setImage(withURL: URL(string: Constants.IMAGE_ENPOINT + viewModel.posterImageURL)!)
         self.titleLabel.text = viewModel.title
-        self.ratingLabel.text = "Rating:  " + viewModel.rating
+        self.ratingLabel.text = "Rating:  " + String(viewModel.rating)
     }
 }

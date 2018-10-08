@@ -13,7 +13,7 @@ import UIKit
 extension MovieListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (movieCollection.count == 0) {
-            collectionView.setEmptyMessage("None favorite movies yet.!")
+            collectionView.setEmptyMessage(ErrorMessage.EMPTY_COLLECTION.rawValue)
         } else {
             collectionView.restore()
         }
@@ -62,6 +62,7 @@ extension MovieListViewController: UITabBarControllerDelegate, UINavigationContr
                 updateUI(with: movieCollection.filter {$0.favoriteIndicator})
             } else {
                 navigationItem.title = "Movie List"
+                navigationItem.prompt = "Sorting by "
             }
         }
     }

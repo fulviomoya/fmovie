@@ -40,7 +40,7 @@ class MovieDetailViewController: UIViewController {
     private func bind(_ model: MovieItemViewModel) {
         self.movieCoverImageView.af_setImage(withURL: URL(string: Constants.IMAGE_ENPOINT + model.posterImageURL)!)
         self.titleLabel.text = model.title
-        self.ratingLabel.text = model.rating
+        self.ratingLabel.text = String(model.rating)
         self.sinopsisTextView.text = model.sipnosis
         
         let title = model.favoriteIndicator == false ?
