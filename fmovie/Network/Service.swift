@@ -16,7 +16,7 @@ enum ServiceAPI {
 extension ServiceAPI: TargetType {
     var baseURL: URL {
         guard let url = URL(string: Constants.API_ENDPOINT) else {
-            fatalError(ErrorMessage.NOT_FOUND.rawValue)
+            fatalError(InformationMessages.NOT_FOUND.rawValue)
         }
         return url
     }

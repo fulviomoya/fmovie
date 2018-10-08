@@ -61,13 +61,13 @@ class MovieListViewModel {
     func changeSortCriterial(collection: [MovieItemViewModel]) {
         switch MovieListViewModel.sortTappedCount {
         case 0:
-            movies = collection.sorted(by: {$0.publicationDate > $1.publicationDate })
+            movies = collection.sorted(by: {$0.publicationDate > $1.publicationDate }) // Most recent first
             MovieListViewModel.sortTappedCount += 1
         case 1:
-            movies = collection.sorted(by: {$0.title < $1.title })
+            movies = collection.sorted(by: {$0.title < $1.title }) // First 'A' to 'Z'
             MovieListViewModel.sortTappedCount += 1
         case 2:
-            movies = collection.sorted(by: {$0.rating < $1.rating })
+            movies = collection.sorted(by: {$0.rating > $1.rating }) //Getter rating first
             MovieListViewModel.sortTappedCount = 0
         default:
             MovieListViewModel.sortTappedCount = 0

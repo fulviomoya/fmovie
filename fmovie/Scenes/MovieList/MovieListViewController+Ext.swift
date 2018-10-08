@@ -13,7 +13,7 @@ import UIKit
 extension MovieListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (movieCollection.count == 0) {
-            collectionView.setEmptyMessage(ErrorMessage.EMPTY_COLLECTION.rawValue)
+            collectionView.setEmptyMessage(InformationMessages.EMPTY_COLLECTION.rawValue)
         } else {
             collectionView.restore()
         }
@@ -58,11 +58,11 @@ extension MovieListViewController: UITabBarControllerDelegate, UINavigationContr
             NotificationCenter.default.post(name: .updateMovies, object: nil)
             let selectedController = viewControllers[tabBarController!.selectedIndex]
             
-            if selectedController.tabBarItem.tag == 1 { //Favorite tag
-                navigationItem.title = "Favorites"
+            if selectedController.tabBarItem.tag == 1 { //Favorite Tag
+                navigationItem.title = ScreenTitle.FAVORITE
                 updateUI(with: movieCollection.filter {$0.favoriteIndicator})
-            } else {
-                navigationItem.title = "fMovie List"
+            } else { // List Tag
+                navigationItem.title = ScreenTitle.LIST
             }
         }
     }

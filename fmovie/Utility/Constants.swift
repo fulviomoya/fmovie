@@ -20,10 +20,16 @@ enum Identifiers {
     static let LIST_TO_DETAIL_SEGUE = "listToDetailSegue"
 }
 
-enum ErrorMessage: String {
+enum ScreenTitle {
+    static let LIST = "Movie List"
+    static let FAVORITE = "Favorites"
+}
+
+enum InformationMessages: String {
     case NOT_FOUND = "Could not be resolve the URL EndPoint"
     case INVALID_VIEWCONTROLLER = "Can not get a ViewController of type."
     case EMPTY_COLLECTION = "No elements to show"
+    case SUCCESS_FETCH_PREFERENCE = "Retrieved values from the cloud!"
 }
 
 enum FavoriteButtonState: String {

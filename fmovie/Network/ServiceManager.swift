@@ -24,7 +24,7 @@ struct ServiceManager: Networkable {
     func getPopularMovies(completion: @escaping completionPopularList) {
         RemoteConfig.remoteConfig().fetch() { status, error in
             RemoteConfig.remoteConfig().activateFetched()
-            print("Retrieved values from the cloud!")
+            print(InformationMessages.SUCCESS_FETCH_PREFERENCE.rawValue)
             
             self.provider.request(.getPopularMovie()) { event in
                 switch event {
