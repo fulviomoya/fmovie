@@ -32,6 +32,7 @@ extension MovieListViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegate
 extension MovieListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.saveLogAnalytics(movieTitle: movieCollection[indexPath.row].title)
         performSegue(withIdentifier: Identifiers.LIST_TO_DETAIL_SEGUE, sender: movieCollection[indexPath.row])
     }
     
@@ -61,8 +62,7 @@ extension MovieListViewController: UITabBarControllerDelegate, UINavigationContr
                 navigationItem.title = "Favorites"
                 updateUI(with: movieCollection.filter {$0.favoriteIndicator})
             } else {
-                navigationItem.title = "Movie List"
-                navigationItem.prompt = "Sorting by "
+                navigationItem.title = "fMovie List"
             }
         }
     }

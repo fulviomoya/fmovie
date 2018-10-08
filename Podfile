@@ -12,5 +12,7 @@ target 'fmovie' do
   pod 'Moya', '~> 11.0'
   pod 'Firebase/Core'
   pod 'Firebase/RemoteConfig'
+  pod 'Fabric'
+  pod 'Crashlytics'
   
 end

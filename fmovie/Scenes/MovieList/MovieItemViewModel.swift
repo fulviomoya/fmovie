@@ -15,6 +15,7 @@ final class MovieItemViewModel {
     let title: String
     let rating: Float
     let sipnosis: String
+    let publicationDate: String
     
     init(with movie: MovieDataModel) {
         self.id = movie.id
@@ -23,5 +24,6 @@ final class MovieItemViewModel {
         self.posterImageURL = movie.posterPath
         self.favoriteIndicator = movie.isFavorite
         self.sipnosis = movie.sinopsis
+        self.publicationDate = movie.publicationDate
     }
 }

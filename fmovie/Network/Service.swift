@@ -24,7 +24,7 @@ extension ServiceAPI: TargetType {
     var path: String {
         switch self {
         case .getPopularMovie():
-            return "/movie/now_playing"
+            return "movie/popular"
         }
     }
     

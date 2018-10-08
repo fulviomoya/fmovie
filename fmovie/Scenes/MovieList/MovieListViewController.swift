@@ -13,7 +13,8 @@ class MovieListViewController: UIViewController {
     
     internal var viewModel: MovieListViewModel!
     internal var movieCollection: [MovieItemViewModel] = []
-    internal var favoriteMovieCollection: [MovieItemViewModel] = []
+    
+    static var sortTappedCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,11 @@ class MovieListViewController: UIViewController {
         viewModel = MovieListViewModel(viewController: self)
     }
     
+    @IBAction func sortButtonTapped(_ sender: Any) {
+        viewModel.changeSortCriterial(collection: movieCollection)
+        movieListCollectionView.reloadData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
         super.viewWillAppear(animated)
@@ -36,7 +42,7 @@ class MovieListViewController: UIViewController {
     
     internal func updateUI(with movies: [MovieItemViewModel]?) {
         guard let movies = movies else {  return  }
-        movieCollection = movies.sorted(by: {$0.rating > $1.rating })
+        movieCollection = movies
         movieListCollectionView.reloadData()
     }
 }

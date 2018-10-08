@@ -112,7 +112,11 @@
                         <viewLayoutGuide key="safeArea" id="ddM-Ci-Qr5"/>
                     </view>
                     <navigationItem key="navigationItem" id="myu-b9-rD4">
-                        <barButtonItem key="rightBarButtonItem" image="sort" id="l68-Xg-k8q"/>
+                        <barButtonItem key="rightBarButtonItem" image="sort" id="l68-Xg-k8q">
+                            <connections>
+                                <action selector="sortButtonTapped:" destination="iJ6-Xx-V7T" id="wCL-9K-hZs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="movieListCollectionView" destination="Daz-Fz-RRC" id="e5X-lC-Ly8"/>
@@ -132,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pOg-Hj-g6b">
-                                <rect key="frame" x="0.0" y="113" width="242" height="254.5"/>
+                                <rect key="frame" x="0.0" y="113" width="242" height="259.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNw-Rv-gRg">
                                 <rect key="frame" x="0.0" y="763" width="414" height="50"/>
@@ -149,7 +153,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5a1-1X-5Jm">
-                                <rect key="frame" x="20" y="376" width="374" height="40"/>
+                                <rect key="frame" x="20" y="381" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rOV-nS-7Er"/>
                                 </constraints>
@@ -160,7 +164,7 @@
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinopsis" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olb-h1-Ope">
-                                <rect key="frame" x="20" y="412.5" width="374" height="32"/>
+                                <rect key="frame" x="20" y="417.5" width="374" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="S97-B8-HSc"/>
                                 </constraints>
@@ -170,8 +174,8 @@
                                 <color key="shadowColor" name="primary_color"/>
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-qU-mi2">
-                                <rect key="frame" x="264.5" y="217" width="107.5" height="66"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uVP-qU-mi2">
+                                <rect key="frame" x="264.5" y="217" width="107.5" height="71"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Ratings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv7-UN-I9z">
                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="33"/>
@@ -185,7 +189,7 @@
                                         <size key="shadowOffset" width="1" height="2"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4G-yi-eId">
-                                        <rect key="frame" x="0.0" y="33" width="107.5" height="33"/>
+                                        <rect key="frame" x="0.0" y="38" width="107.5" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="1E8-1R-xDD"/>
                                         </constraints>
@@ -197,8 +201,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09g-bN-PxE">
-                                <rect key="frame" x="20" y="455" width="374" height="290.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09g-bN-PxE">
+                                <rect key="frame" x="20" y="460" width="374" height="285.5"/>
                                 <color key="backgroundColor" name="primary_color"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -255,6 +259,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="secondary_color"/>
+                        <color key="barTintColor" name="primary_color"/>
                     </tabBar>
                     <connections>
                         <segue destination="tXk-Jf-qnB" kind="relationship" relationship="viewControllers" id="gYl-pp-Huk"/>
@@ -275,6 +280,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="secondary_color"/>
+                        <color key="barTintColor" name="primary_color"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="secondary_color"/>
                         </textAttributes>
@@ -298,6 +304,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="secondary_color"/>
+                        <color key="barTintColor" name="primary_color"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="secondary_color"/>
                         </textAttributes>
@@ -326,6 +333,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cIg-Aa-xcW"/>
+        <segue reference="LSZ-mh-cXr"/>
     </inferredMetricsTieBreakers>
 </document>

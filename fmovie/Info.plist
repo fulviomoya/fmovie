@@ -58,5 +58,19 @@
             </dict>
         </dict>
     </dict>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>b125af2ba18aa44107ab6929cab0d09ba6bd2df5</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Crashlytics</string>
+            </dict>
+        </array>
+    </dict>
 </dict>
 </plist>
