@@ -9,15 +9,17 @@
 import Foundation
 
 final class MovieItemViewModel {
-    let favoriteIndicator: Bool
+    var favoriteIndicator: Bool
     let posterImageURL: String
     let title: String
     let rating: String
+    let sipnosis: String
     
     init(with movie: MovieDataModel) {
         self.title = movie.title
         self.rating = String(movie.rating)
         self.posterImageURL = movie.posterPath
         self.favoriteIndicator = movie.isFavorite
+        self.sipnosis = movie.sinopsis
     }
 }

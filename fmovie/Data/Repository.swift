@@ -12,14 +12,10 @@ import RealmSwift
 protocol RepositoryProtocol {
     associatedtype T
     func queryAll<T: MovieDataModel>() -> Results<T>
-    // func query(with predicate: NSPredicate,
-    //          sortDescriptors: [NSSortDescriptor]) -> Observable<[T]>
     func save(entity: T)
-    
 }
 
 final class Repository<T>: RepositoryProtocol where T: MovieDataModel {
-    
     private let configuration: Realm.Configuration
     
     private var realm: Realm {
@@ -39,17 +35,4 @@ final class Repository<T>: RepositoryProtocol where T: MovieDataModel {
             realm.add(entity, update: true)
         }
     }
-    
-    /*func query(with predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]) -> Observable<[MovieDataModel]> {
-     return Observable.deferred {
-     let realm = self.realm
-     let objects = realm.objects(MovieDataModel.self).sorted(by: { (m1, m2) -> Bool in
-     m1.<T: MovieDataModel>
-     })
-     
-     return Observable.array(from: objects)
-     
-     }.subscribeOn(scheduler)
-     }*/
-    
 }

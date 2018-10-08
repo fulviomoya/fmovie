@@ -26,6 +26,11 @@ enum Identifiers {
     static let LIST_TO_DETAIL_SEGUE = "listToDetailSegue"
 }
 
+enum FavoriteButtonState: String {
+    case IS_FAVORITE = "Add to Favorite"
+    case NOT_FAVORITE = "Remove from Favorite"
+}
+
 extension Notification.Name {
     static let updateMovies = Notification.Name("update_movies")
 }

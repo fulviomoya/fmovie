@@ -12,16 +12,15 @@ class MovieListViewController: UIViewController {
     @IBOutlet weak var movieListCollectionView: UICollectionView!
 
     private var viewModel: MovieListViewModel!
-    var movieCollection: [MovieItemViewModel] = []
+    private var movieCollection: [MovieItemViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionViewConfiguration()
         
         viewModel = MovieListViewModel(viewController: self)
         movieListCollectionView.dataSource = self
         movieListCollectionView.delegate = self
-        
-        collectionViewConfiguration()
     }
     
     func updateUI(with movies: [MovieItemViewModel]?) {
@@ -35,8 +34,10 @@ class MovieListViewController: UIViewController {
     private func collectionViewConfiguration() {
         let flow = movieListCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
+        //Removing gab betweem collection view elements.
         let itemSpacing: CGFloat = 1
         let itemsInOneLine: CGFloat = 2
+        
         flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let width = UIScreen.main.bounds.size.width - itemSpacing * CGFloat(itemsInOneLine - 1)
         flow.itemSize = CGSize(width: floor(width/itemsInOneLine), height: width*1.5/itemsInOneLine)
@@ -60,6 +61,12 @@ extension MovieListViewController: UICollectionViewDataSource {
 
 extension MovieListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selecting:: \(indexPath.row)")
+        performSegue(withIdentifier: Identifiers.LIST_TO_DETAIL_SEGUE, sender: movieCollection[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextViewController = segue.destination as? MovieDetailViewController {
+            nextViewController.model = sender as? MovieItemViewModel
+        }
     }
 }
