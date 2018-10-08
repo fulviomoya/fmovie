@@ -19,5 +19,6 @@ class MovieDetailViewModel {
         if let dataModel: MovieDataModel = repository.findBy(id: modelId)  {
             repository.update(object: dataModel, favorite: isFavorite)
         }
+        NotificationCenter.default.post(name: .updateMovies, object: nil)
     } 
 }

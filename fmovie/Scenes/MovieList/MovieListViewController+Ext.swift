@@ -12,6 +12,12 @@ import UIKit
 //MARK: - UICollectionViewDataSource
 extension MovieListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (movieCollection.count == 0) {
+            collectionView.setEmptyMessage("None favorite movies yet.!")
+        } else {
+            collectionView.restore()
+        }
+
         return movieCollection.count
     }
     

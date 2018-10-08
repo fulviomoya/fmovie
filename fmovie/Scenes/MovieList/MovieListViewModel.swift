@@ -36,19 +36,17 @@ class MovieListViewModel {
                 for movie in list {
                     self.repository.save(entity: movie.asDataModel())
                 }
-                
-                //Notify any posible observers
-                NotificationCenter.default.post(name: .updateMovies, object: nil)
+                NotificationCenter.default.post(name: .updateMovies, object: nil)   //Notify any posible observers
             }
         }
-        bindMovies()
+        getMovieListFromDB()
     }
     
     @objc func refresh(notification: NSNotification){
-        bindMovies()
+        getMovieListFromDB()
     }
     
-    fileprivate func bindMovies() {
+    fileprivate func getMovieListFromDB() {
         var itemViewModel:[MovieItemViewModel] = []
         repository.queryAll().forEach { item in
             itemViewModel.append(MovieItemViewModel(with: item))

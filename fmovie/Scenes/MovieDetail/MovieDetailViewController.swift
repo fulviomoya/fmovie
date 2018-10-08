@@ -21,9 +21,10 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = model.title
-        viewModel = MovieDetailViewModel()
         tabBarController?.tabBar.isHidden = true
+        
         bind(model)
+        viewModel = MovieDetailViewModel()
     }
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
@@ -33,12 +34,11 @@ class MovieDetailViewController: UIViewController {
         favoriteButton.setTitle(title.rawValue, for: .normal)
         
         model.favoriteIndicator = !model.favoriteIndicator
-        NotificationCenter.default.post(name: .updateMovies, object: nil)
         viewModel.movieChangePreference(modelId: model.id, isFavorite: model.favoriteIndicator)
     }
     
     private func bind(_ model: MovieItemViewModel) {
-        self.movieCoverImageView.af_setImage(withURL: URL(string: Constants.IMAGE_ENPOINT.rawValue + model.posterImageURL)!)
+        self.movieCoverImageView.af_setImage(withURL: URL(string: Constants.IMAGE_ENPOINT + model.posterImageURL)!)
         self.titleLabel.text = model.title
         self.ratingLabel.text = model.rating
         self.sinopsisTextView.text = model.sipnosis

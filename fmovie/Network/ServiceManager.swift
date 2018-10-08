@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Moya
 import Firebase
+import Moya
 
 typealias completionPopularList = ([Movie]) -> ()
 typealias completionImage = (Image) -> ()
@@ -19,14 +19,10 @@ protocol Networkable {
 }
 
 struct ServiceManager: Networkable {
-     var provider = MoyaProvider<ServiceAPI>() /*plugins: [NetworkLoggerPlugin(verbose: true)]*/
+    var provider = MoyaProvider<ServiceAPI>() /*plugins: [NetworkLoggerPlugin(verbose: true)]*/
     
     func getPopularMovies(completion: @escaping completionPopularList) {
         RemoteConfig.remoteConfig().fetch() { status, error in
-            if let error = error {
-                print("Uh-oh. Got an error fetching remote values \(error)")
-                return
-            }
             RemoteConfig.remoteConfig().activateFetched()
             print("Retrieved values from the cloud!")
             

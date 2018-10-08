@@ -9,21 +9,20 @@
 import Foundation
 import Firebase
 
-enum Constants: String {
-    case API_ENDPOINT = "https://api.themoviedb.org/3/"
-    case IMAGE_ENPOINT = "http://image.tmdb.org/t/p/w400"
-    
+enum Constants {
+    static let API_ENDPOINT = "https://api.themoviedb.org/3"
+    static let IMAGE_ENPOINT = "http://image.tmdb.org/t/p/w400"
     static let APIKey: String = RemoteConfig.remoteConfig().configValue(forKey: "tmdb_api_key").stringValue ?? "unknown"
-}
-
-enum ErrorMessage: String {
-    case NOT_FOUND = "Could not be resolve the URL EndPoint"
-    case INVALID_VIEWCONTROLLER = "Can not get a ViewController of type."
 }
 
 enum Identifiers {
     static let MOVIE_REUSABLE = "movie_reusable"
     static let LIST_TO_DETAIL_SEGUE = "listToDetailSegue"
+}
+
+enum ErrorMessage: String {
+    case NOT_FOUND = "Could not be resolve the URL EndPoint"
+    case INVALID_VIEWCONTROLLER = "Can not get a ViewController of type."
 }
 
 enum FavoriteButtonState: String {
