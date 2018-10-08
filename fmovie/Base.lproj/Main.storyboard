@@ -266,7 +266,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fYM-Z7-GRv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tXk-Jf-qnB" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="listMovie" automaticallyAdjustsScrollViewInsets="NO" id="tXk-Jf-qnB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="q5t-xy-V4L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2Fv-rO-xZt">
@@ -289,8 +289,8 @@
         <!--Navigation Controller-->
         <scene sceneID="tcl-0T-fF7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pXk-i4-8G7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="0ax-ae-oSj"/>
+                <navigationController restorationIdentifier="favorites" automaticallyAdjustsScrollViewInsets="NO" id="pXk-i4-8G7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="favorites" id="0ax-ae-oSj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="R45-nA-1xR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -311,7 +311,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star_icon" width="22" height="22"/>
+        <image name="star_icon" width="32" height="32"/>
         <namedColor name="primary_color">
             <color red="0.10980392156862745" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

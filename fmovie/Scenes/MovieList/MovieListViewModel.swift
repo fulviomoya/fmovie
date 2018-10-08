@@ -24,6 +24,7 @@ class MovieListViewModel {
         self.viewController = viewController
         self.repository = Application.shared.serviceLocator.getRepository()
         self.service = Application.shared.serviceManager
+        
         NotificationCenter.default.addObserver(self, selector: #selector(refresh(notification: )),
                                                name: .updateMovies, object: nil)
         fetchMovieList()
@@ -40,17 +41,20 @@ class MovieListViewModel {
                 NotificationCenter.default.post(name: .updateMovies, object: nil)
             }
         }
-            var itemViewModel:[MovieItemViewModel] = [] //FIXME
-            for item in repository.queryAll() {
-                itemViewModel.append(MovieItemViewModel(with: item))
-            }
-            
-            self.movies = itemViewModel
-        
+        bindMovies()
     }
     
     @objc func refresh(notification: NSNotification){
-        fetchMovieList()
+        bindMovies()
+    }
+    
+    fileprivate func bindMovies() {
+        var itemViewModel:[MovieItemViewModel] = []
+        repository.queryAll().forEach { item in
+            itemViewModel.append(MovieItemViewModel(with: item))
+        }
+        
+        self.movies = itemViewModel
     }
     
     deinit {

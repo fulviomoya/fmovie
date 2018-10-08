@@ -22,6 +22,7 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = model.title
         viewModel = MovieDetailViewModel()
+        tabBarController?.tabBar.isHidden = true
         bind(model)
     }
     
@@ -32,7 +33,8 @@ class MovieDetailViewController: UIViewController {
         favoriteButton.setTitle(title.rawValue, for: .normal)
         
         model.favoriteIndicator = !model.favoriteIndicator
-        viewModel.movieChangePreference(modelId: model.id, isFavorite: model.favoriteIndicator ) 
+        NotificationCenter.default.post(name: .updateMovies, object: nil)
+        viewModel.movieChangePreference(modelId: model.id, isFavorite: model.favoriteIndicator)
     }
     
     private func bind(_ model: MovieItemViewModel) {
